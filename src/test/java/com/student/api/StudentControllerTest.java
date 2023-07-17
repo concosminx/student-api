@@ -32,7 +32,7 @@ public class StudentControllerTest {
         .andExpect(content().string(containsString("Chloe")));
   }
 
-  @WithMockUser(value = "admin")
+  @WithMockUser(value = "adminx")
   @Test
   public void getFirstStudentTest() throws Exception {
     mockMvc.perform(
