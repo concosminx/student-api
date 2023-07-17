@@ -29,7 +29,7 @@ public class StudentControllerTest {
         get("/students").header("Accept", "application/json")
         ).andDo(print())
         .andExpect(status().isOk())
-        .andExpect(content().string(containsString("Chloex")));
+        .andExpect(content().string(containsString("Chloe")));
   }
 
   @WithMockUser(value = "admin")
