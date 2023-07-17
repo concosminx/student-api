@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
@@ -27,6 +28,7 @@ public class StudentControllerRepoMockTest {
   @MockBean
   private StudentRepository repository;
 
+  @WithMockUser(value = "admin")
   @Test
   public void greetingShouldReturnMessageFromService() throws Exception {
     when(repository.findAll()).thenReturn(List.of(new Student("Ana", "Popescu", LocalDate.of(2004, 12,12))));
