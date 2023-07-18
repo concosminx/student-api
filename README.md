@@ -2,6 +2,8 @@
 
 ## Student API
 
+[![CI Status](https://github.com/concosminx/student-api/actions/workflows/gradle.yml/badge.svg)](https://github.com/concosminx/student-api/actions/workflows/gradle.yml)
+
 ## General requirements
 - The source code will be available on GitHub, in a separate, public repository. Check slides and [how-to-use-git](https://phoenixnap.com/kb/how-to-use-git)
 - The repository will contain everything necessary and sufficient for compilation and running (configuration files, popular scripts, database - if applicable, etc.). See [ignore files in git](https://www.freecodecamp.org/news/gitignore-file-how-to-ignore-files-and-folders-in-git/)
