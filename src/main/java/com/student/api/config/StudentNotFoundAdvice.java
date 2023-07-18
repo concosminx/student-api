@@ -1,6 +1,6 @@
-package com.student.api.configuration;
+package com.student.api.config;
 
-import com.student.api.exceptions.StudentNotFoundException;
+import com.student.api.exception.StudentNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

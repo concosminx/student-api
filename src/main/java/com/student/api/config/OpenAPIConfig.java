@@ -1,11 +1,10 @@
-package com.student.api.configuration;
+package com.student.api.config;
 
 import java.util.List;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -47,16 +46,16 @@ public class OpenAPIConfig {
 
     return new OpenAPI()
         .info(info)
-        .components(new Components()
-            .addSecuritySchemes(SCHEME_NAME, createSecurityScheme()))
-        .addSecurityItem(new SecurityRequirement().addList(SCHEME_NAME))
+        //.components(new Components()
+        //    .addSecuritySchemes(SCHEME_NAME, createSecurityScheme()))
+        //.addSecurityItem(new SecurityRequirement().addList(SCHEME_NAME))
         .servers(List.of(devServer, prodServer));
   }
 
-  private SecurityScheme createSecurityScheme() {
-    return new SecurityScheme()
-        .name(SCHEME_NAME)
-        .type(SecurityScheme.Type.HTTP)
-        .scheme(SCHEME);
-  }
+//  private SecurityScheme createSecurityScheme() {
+//    return new SecurityScheme()
+//        .name(SCHEME_NAME)
+//        .type(SecurityScheme.Type.HTTP)
+//        .scheme(SCHEME);
+//  }
 }
