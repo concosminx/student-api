@@ -1,9 +1,13 @@
 package com.student.api.service;
 
 import com.student.api.dto.StudentDto;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 
+@Validated
 public interface StudentService {
 
   /**
@@ -12,14 +16,17 @@ public interface StudentService {
    * @param limit
    * @return
    */
-  List<StudentDto> getStudents(int page, int limit);
+  List<StudentDto> getStudents(@Min(0)
+                               int page,
+                               @Min(0)
+                               int limit);
 
   /**
    * Creates a new student
    * @param studentDto
    * @return
    */
-  StudentDto createStudent(StudentDto studentDto);
+  StudentDto createStudent(@Valid StudentDto studentDto);
 
 
   /**
@@ -28,13 +35,13 @@ public interface StudentService {
    * @param id
    * @return
    */
-  StudentDto updateStudent(StudentDto studentDto, Long id);
+  StudentDto updateStudent(@Valid StudentDto studentDto, @Min(1) Long id);
 
   /**
    * Deletes a student based on id
    * @param id
    */
-  void deleteStudent(Long id);
+  void deleteStudent(@Min(1) Long id);
 
 
   /**
@@ -42,5 +49,5 @@ public interface StudentService {
    * @param id
    * @return
    */
-  StudentDto findStudentById(Long id);
+  StudentDto findStudentById(@Min(1) Long id);
 }
