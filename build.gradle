@@ -43,7 +43,6 @@ dependencies {
 }
 
 tasks.named("bootBuildImage") {
-	println ('xxxx' + "$System.env.DOCKER_USERNAME")
 	imageName.set("docker.io/library/${project.name}:latest")
 	publish = true
 	docker {
@@ -58,4 +57,12 @@ tasks.named("bootBuildImage") {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+
+task dumpVar {
+	doLast {
+		println "var 1: $System.env.JAVA_HOME"
+		println "var 2: $System.env.DOCKER_USERNAME"
+	}
 }
