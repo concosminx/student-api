@@ -26,7 +26,8 @@ jobs:
       with:
         arguments: test bootJar
     - name: Use the Upload Artifact GitHub Action
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with: 
-          name: assets-for-download
+          name: app.zip
           path: build/libs
+          retention-days: 5
