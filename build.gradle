@@ -43,7 +43,7 @@ dependencies {
 }
 
 tasks.named("bootBuildImage") {
-	imageName.set("docker.io/${project.name}:latest")
+	imageName.set("docker.io/library/${project.name}:latest")
 	publish = true
 	docker {
 		publishRegistry {
