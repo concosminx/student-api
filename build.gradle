@@ -51,6 +51,7 @@ tasks.named("bootBuildImage") {
 			password = "$System.env.DOCKER_PASSWORD"
 		}
 	}
+	println "$System.env.DOCKER_USERNAME"
 }
 
 
