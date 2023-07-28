@@ -19,6 +19,7 @@ jobs:
     - name: Get git sha short
       id: vars
       run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+    # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
     - id: setup-pack
       uses: buildpacks/github-actions/setup-pack@v4.4.0
     - id: package
@@ -49,4 +50,4 @@ jobs:
     - name: Push deploy manifests to local repo
       uses: ad-m/github-push-action@master
       with: 
-        github_token: ${{ secrets.AUTO_COMMIT_TOKEN }}            
+        github_token: ${{ secrets.GITHUB_TOKEN }}            
