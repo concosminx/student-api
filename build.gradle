@@ -44,13 +44,13 @@ dependencies {
 
 tasks.named("bootBuildImage") {
 	imageName.set("docker.io/library/${project.name}:latest")
-	publish = true
-	docker {
-		publishRegistry {
-			username = "$System.env.DOCKER_USERNAME"
-			password = "$System.env.DOCKER_PASSWORD"
-		}
-	}
+	//publish = false
+	//docker {
+	//	publishRegistry {
+	//		username = "$System.env.DOCKER_USERNAME"
+	//		password = "$System.env.DOCKER_PASSWORD"
+	//	}
+	//}
 }
 
 
