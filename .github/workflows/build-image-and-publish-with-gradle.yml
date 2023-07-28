@@ -38,4 +38,6 @@ jobs:
     - name: Push to docker
       run: |
         #!/usr/bin/env bash
+        docker tag student-api:latest ${{ secrets.DOCKER_USERNAME }}/student-api:latest
         docker images 
+        docker push ${{ secrets.DOCKER_USERNAME }}/student-api:latest
