@@ -1,5 +1,5 @@
 ---
-name: build and push docker image
+name: Build and push docker image
 on:
   workflow_dispatch:
 
@@ -24,6 +24,7 @@ jobs:
     - id: package
       run: |
         #!/usr/bin/env bash
+        echo "java.runtime.version=17.0.8" > system.properties
         pack build --path .  --builder heroku/buildpacks:20 --publish ${REPO}/student-api:sha-${{ steps.vars.outputs.sha_short }}  
       shell: bash
       env:
